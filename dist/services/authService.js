@@ -13,6 +13,7 @@ const forgotPassword = async (email) => {
     if (!user)
         throw new Error('User not found');
     const resetToken = jsonwebtoken_1.default.sign({ email }, process.env.JWT_SECRET, { expiresIn: '1h' });
+    console.log(exports.resetPassword);
     await (0, userModel_1.saveResetToken)(email, resetToken);
     const resetURL = `http://your-frontend-url.com/reset-password?token=${resetToken}`;
     await (0, email_1.sendPasswordResetEmail)(email, resetURL);

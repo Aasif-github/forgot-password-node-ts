@@ -5,6 +5,7 @@ const users: { [key: string]: User } = {
 };
 
 export const getUserByEmail = async (email: string): Promise<User | null> => {
+ // users = await User.find({email});
   return users[email] || null;
 };
 

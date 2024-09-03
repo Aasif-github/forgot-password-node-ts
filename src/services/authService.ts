@@ -8,6 +8,7 @@ export const forgotPassword = async (email: string) => {
   if (!user) throw new Error('User not found');
 
   const resetToken = jwt.sign({ email }, process.env.JWT_SECRET!, { expiresIn: '1h' });
+  console.log(resetPassword);
   await saveResetToken(email, resetToken);
 
   const resetURL = `http://your-frontend-url.com/reset-password?token=${resetToken}`;

@@ -10,6 +10,7 @@ app.get('/', (req, res) => {
   res.send('Hello, Express with TypeScript!');
 });
 
+console.log('hei');
 // app.use((err: Error, req, res, next) => {
 //   console.error(err.stack);
 //   res.status(500).send('Something went wrong!');

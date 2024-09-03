@@ -5,6 +5,7 @@ const users = {
     'user@example.com': { email: 'user@example.com', password: 'hashed_password' },
 };
 const getUserByEmail = async (email) => {
+    // users = await User.find({email});
     return users[email] || null;
 };
 exports.getUserByEmail = getUserByEmail;
