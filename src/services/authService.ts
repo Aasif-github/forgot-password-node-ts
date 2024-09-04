@@ -6,12 +6,12 @@ import { getUserByEmail, updateUserPassword, saveResetToken } from '../models/us
 export const forgotPassword = async (email: string) => {
   const user = await getUserByEmail(email);
   if (!user) throw new Error('User not found');
-
+  console.log('user)', user);
   const resetToken = jwt.sign({ email }, process.env.JWT_SECRET!, { expiresIn: '1h' });
-  console.log(resetPassword);
+  console.log('Reset Password', resetPassword);
   await saveResetToken(email, resetToken);
 
-  const resetURL = `http://your-frontend-url.com/reset-password?token=${resetToken}`;
+  const resetURL = `http://localhost:3000/reset-password?token=${resetToken}`;
   await sendPasswordResetEmail(email, resetURL);
 };
 
@@ -23,3 +23,5 @@ export const resetPassword = async (token: string, newPassword: string) => {
   const hashedPassword = await bcrypt.hash(newPassword, 10);
   await updateUserPassword(user.email, hashedPassword);
 };
+
+

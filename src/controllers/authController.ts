@@ -3,6 +3,7 @@ import { forgotPassword, resetPassword } from '../services/authService';
 
 export const handleForgotPassword = async (req: Request, res: Response) => {
   const { email } = req.body;
+  console.log(email);
   try {
     await forgotPassword(email);
     res.status(200).json({ message: 'Password reset link sent to your email' });

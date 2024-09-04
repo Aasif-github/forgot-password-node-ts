@@ -1,0 +1,11 @@
+Method: POST 
+URL: http://localhost:3000/api/auth/forgot-password
+Body: JSON { 
+    "email":"johndeo8789@gmail.com"
+}
+
+Status: 200 OK
+Response: Body 
+{
+    "message": "Password reset link sent to your email"
+}
