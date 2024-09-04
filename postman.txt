@@ -9,3 +9,22 @@ Response: Body
 {
     "message": "Password reset link sent to your email"
 }
+
+Method: POST
+http://localhost:3000/api/auth/reset-password
+
+RAW - Body: JSON 
+{
+    "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5kZW84Nzg5QGdtYWlsLmNvbSIsImlhdCI6MTcyNTQzNDIxNywiZXhwIjoxNzI1NDM3ODE3fQ.7PrvpAmuyIaBibKSLFW2i4N4okZPoF65bHzWxoTBySs",
+    "newPassword":"aasif@123"
+}
+
+
+Method: POST
+http://localhost:3000/reset-password?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5kZW84Nzg5QGdtYWlsLmNvbSIsImlhdCI6MTcyNTQzNDIxNywiZXhwIjoxNzI1NDM3ODE3fQ.7PrvpAmuyIaBibKSLFW2i4N4okZPoF65bHzWxoTBySs
+
+Params
+---------------------------------------------
+key     value
+---------------------------------------------
+token   eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5kZW84Nzg5QGdtYWlsLmNvbSIsImlhdCI6MTcyNTQzNDIxNywiZXhwIjoxNzI1NDM3ODE3fQ.7PrvpAmuyIaBibKSLFW2i4N4okZPoF65bHzWxoTBySs
