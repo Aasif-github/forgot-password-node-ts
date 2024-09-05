@@ -7,7 +7,7 @@ export const forgotPassword = async (email: string) => {
   const user = await getUserByEmail(email);
   if (!user) throw new Error('User not found');
   console.log('user)', user);
-  const resetToken = jwt.sign({ email }, process.env.JWT_SECRET!, { expiresIn: '1h' });
+  const resetToken = jwt.sign({ email }, process.env.JWT_SECRET!, { expiresIn: '7h' });
   console.log('Reset Password', resetPassword);
   await saveResetToken(email, resetToken);
 
